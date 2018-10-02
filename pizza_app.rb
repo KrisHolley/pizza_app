@@ -29,6 +29,7 @@ amount = gets.chomp
 my_pizza(amount,size, crust, cheese, toppings)
 
 end
+#comment
 # print "What size pizza would you like?"
 # size = gets.chomp
 # print "What style crust would you like?"
