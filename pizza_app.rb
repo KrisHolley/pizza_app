@@ -6,16 +6,27 @@ def my_pizza(amount,size, crust, cheese, toppings)
 	puts"Toppings: #{toppings}"
 	puts "______________________"
 end
-# def amount
-# 	amount = ["1","2","4","6","8"].sample
-# end
-# def size
-# 	size = ["Medium", "Large", "Extra Large"].sample
-5.times do
+def size
+	size = ["Medium", "Large", "Extra Large"].sample
+end
+
+def crust
+	crust = ["original", "thick", "thin", "stuffed"].sample
+end
+
+def cheese
+	cheese = ["american", "swiss", "cheddar"].sample
+end
+
+def toppings
+	toppings = ["pepperoni", "banana peppers", "onions"].sample
+end
+3.times do
+
 print "How many pizzas would you like?"
 amount = gets.chomp
  	
-my_pizza(amount,"large","Deep Dish", "American", "Pepperoni")
+my_pizza(amount,size, crust, cheese, toppings)
 
 end
 # print "What size pizza would you like?"
