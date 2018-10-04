@@ -55,7 +55,6 @@ price = count * 10
 pizza_count = 0
 delivery_price = 0
 del = delivery 
-tip = price * 0.15
 
 count.times do
 	puts "pizza number: #{pizza_count += 1}"
@@ -63,7 +62,7 @@ count.times do
 	
 end
 if del == "5 miles"
-	puts "under 5 miles your delivery is free!"
+	puts "Under 5 miles, your delivery is free!"
 elsif 
 	del == "10 miles"
 	puts "10 miles to your house."
@@ -77,8 +76,12 @@ elsif
 	puts "20 miles to your house."
 	delivery_price += 9.00
 end
-puts "Total numbmer of pizza is #{count}"
-puts "Delivery cost is $#{delivery_price}, so total cost is $#{delivery_price + price + tip}."
+
+tip = (price + delivery_price) * 0.15
+puts "Total numbmer of pizzas are #{count} at $10.00 each."
+puts "Delivery cost is $#{delivery_price}"
+puts "The tip is included at $#{tip}"
+puts "Your total cost is $#{delivery_price + price + tip}."
 
 #comment
 # print "What size pizza would you like?"
