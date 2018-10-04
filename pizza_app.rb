@@ -37,27 +37,48 @@ end
 
 
 print "How many pizzas would you like?"
-count = gets.chomp.to_i
-price = count * 6
+
+isgettingnumber = true
+while isgettingnumber == true
+count = gets.to_i
+
+	if count < 1
+		puts "We asked for a number of pizzas. Try again."
+		isgettingnumber = true
+	else
+		puts "Okay, here ya go!"
+		isgettingnumber = false
+	end
+end
+
+price = count * 10
+pizza_count = 0
 delivery_price = 0
 del = delivery 
+tip = price * 0.15
+
 count.times do
+	puts "pizza number: #{pizza_count += 1}"
 	my_pizza(size, crust, cheese, meat, veggies, sauce )
+	
 end
 if del == "5 miles"
-	puts "under 5 miles"
+	puts "under 5 miles your delivery is free!"
 elsif 
 	del == "10 miles"
-	puts "10 miles"
-	delivery_price += 5
-elsif del == "15 miles"
-	puts "15 miles"
-	delivery_price += 7
-elsif del == "20 miles"
-	puts "20 miles"
-	delivery_price += 9
+	puts "10 miles to your house."
+	delivery_price += 5.00
+elsif 
+	del == "15 miles"
+	puts "15 miles to your house."
+	delivery_price += 7.00
+elsif 
+	del == "20 miles"
+	puts "20 miles to your house."
+	delivery_price += 9.00
 end
-puts "Delivery cost is #{delivery_price}, so total cost is #{delivery_price + price}."
+puts "Total numbmer of pizza is #{count}"
+puts "Delivery cost is $#{delivery_price}, so total cost is $#{delivery_price + price + tip}."
 
 #comment
 # print "What size pizza would you like?"
