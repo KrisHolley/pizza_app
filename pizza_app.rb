@@ -1,9 +1,10 @@
-def my_pizza(amount,size, crust, cheese, toppings)
-	puts"amount: #{amount}"
+def my_pizza(size, crust, cheese, meat, veggies, sauce)
 	puts "size: #{size}"
 	puts"Crust: #{crust}"
 	puts"Cheese: #{cheese}"
-	puts"Toppings: #{toppings}"
+	puts"meat: #{meat}"
+	puts"veggies: #{veggies}"
+	puts"sauce: #{sauce}"
 	puts "______________________"
 end
 def size
@@ -18,17 +19,46 @@ def cheese
 	cheese = ["american", "swiss", "cheddar"].sample
 end
 
-def toppings
-	toppings = ["pepperoni", "banana peppers", "onions"].sample
+def meat
+	meat = ["pepperoni", "sausage", "bacon", "ham"].sample
 end
-3.times do
+def veggies
+	veggies = ["banana peppers", "onions", "olives", "mushrooms"].sample
+end
+
+def sauce
+	sauce = ["Buffalo", "Ranch", "Red Sauce", "BBQ"].sample
+end
+
+def delivery
+	delivery = ["5 miles","10 miles","15 miles","20 miles"].sample
+end
+
+
 
 print "How many pizzas would you like?"
-amount = gets.chomp
- 	
-my_pizza(amount,size, crust, cheese, toppings)
-
+count = gets.chomp.to_i
+price = count * 6
+delivery_price = 0
+del = delivery 
+count.times do
+	my_pizza(size, crust, cheese, meat, veggies, sauce )
 end
+if del == "5 miles"
+	puts "under 5 miles"
+elsif 
+	del == "10 miles"
+	puts "10 miles"
+	delivery_price += 5
+elsif del == "15 miles"
+	puts "15 miles"
+	delivery_price += 7
+elsif del == "20 miles"
+	puts "20 miles"
+	delivery_price += 9
+end
+puts "Delivery cost is #{delivery_price}, so total cost is #{delivery_price + price}."
+
 #comment
 # print "What size pizza would you like?"
 # size = gets.chomp
